@@ -1,0 +1,42 @@
+[index (6).html](https://github.com/user-attachments/files/33168309/index.6.html)
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Mi primera aplicación</title>
+</head>
+
+<body style="background: lightblue; font-family: Arial;">
+
+  <h1>Mi primera aplicación</h1>
+  <p>Escribe tu nombre:</p>
+
+  <form id="formulario">
+    <input id="nombre" type="text">
+    <button type="submit">Enviar</button>
+  </form>
+
+  <p id="resultado" aria-live="polite"></p>
+
+  <script>
+    document.getElementById("formulario").addEventListener(
+      "submit",
+      function(evento) {
+        evento.preventDefault();
+
+        let nombre = document.getElementById("nombre").value.trim();
+
+        if (nombre === "") {
+          document.getElementById("resultado").textContent =
+            "Primero escribe tu nombre.";
+        } else {
+          document.getElementById("resultado").textContent =
+            "Hola, " + nombre + ". Bienvenido.";
+        }
+      }
+    );
+  </script>
+
+</body>
+</html>
